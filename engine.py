@@ -100,25 +100,29 @@ def main():
         os.system("printf '•\n"
                   " ★ To Get a picture type pic\n"
                   "•\n"
-                  " ★ To run and animation type ani\n"
+                  " ★ To run a animation type ani\n"
                   "•\n"
-                  " ★ To run and loop type loop\n"
+                  " ★ To run a loop type loop\n"
+                  "•\n"
+                  " ★ To create a spining animation/loop a current picture type spin\n"
                   "•\n"
                   " ★ Finally, To exit type exit\n\n' " + la)
         command = input(">")
 
         if "pic" in command.casefold():
             root = 'pictures/'
-            chosen = chooseFiles(root)
+            path = chooseFiles(root)
             colorPicker()
-            color_graphics.convert(chosen, color)
+            color_graphics.convert(path, color)
             goBack()
+
         elif "ani" in command.casefold():
             root = 'animations/'
             path = chooseFiles(root)
             colorPicker()
             color_graphics.animation(path, color)
             goBack()
+
         elif "loop" in command.casefold():
             root = 'loops/'
             path = chooseFiles(root)
@@ -127,6 +131,13 @@ def main():
             colorPicker()
             color_graphics.loop(path, times, color)
             goBack()
+
+        elif "spin" in command.casefold():
+            root = 'pictures/'
+            path = chooseFiles(root)
+            color_graphics.spin(path)
+            goBack()
+
         else:
             os.system("print f'∆˚Whoa there bud, that doesnt seem to be a command!˚∆'" + la)
 
