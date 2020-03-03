@@ -75,8 +75,9 @@ def number():
 #this is important so we dont clog the final product
 def goBack():
     global command
-    os.system("printf 'Commands: To return to menu > back, to exit > exit, for help > help '" + l)
-    while not "back" in command.casefold() and not "exit" in command.casefold() and not "help" in command.casefold():
+    command = ""
+    os.system("printf 'Commands: To return to menu > back, to exit > exit, to convert another image > again  '" + l)
+    while not "back" in command.casefold() and not "exit" in command.casefold() and not "again" in command.casefold():
         command = input(">")
 
 
@@ -110,36 +111,41 @@ def main():
         command = input(">")
 
         if "pic" in command.casefold():
-            root = 'pictures/'
-            path = chooseFiles(root)
-            colorPicker()
-            color_graphics.convert(path, color)
-            goBack()
+            while "back" not in command:
+                root = 'pictures/'
+                path = chooseFiles(root)
+                colorPicker()
+                color_graphics.convert(path, color)
+                goBack()
 
         elif "ani" in command.casefold():
-            root = 'animations/'
-            path = chooseFiles(root)
-            colorPicker()
-            color_graphics.animation(path, color)
-            goBack()
+            while "back" not in command:
+                root = 'animations/'
+                path = chooseFiles(root)
+                colorPicker()
+                color_graphics.animation(path, color)
+                goBack()
 
         elif "loop" in command.casefold():
-            root = 'loops/'
-            path = chooseFiles(root)
-            os.system("printf 'How many times would you like your loop to run'" + la)
-            times = number()
-            colorPicker()
-            color_graphics.loop(path, times, color)
-            goBack()
+            while "back" not in command:
+                root = 'loops/'
+                path = chooseFiles(root)
+                os.system("printf 'How many times would you like your loop to run'" + la)
+                times = number()
+                colorPicker()
+                color_graphics.loop(path, times, color)
+                goBack()
 
         elif "spin" in command.casefold():
-            root = 'pictures/'
-            path = chooseFiles(root)
-            color_graphics.spin(path)
-            goBack()
+            while "back" not in command:
+                root = 'pictures/'
+                path = chooseFiles(root)
+                color_graphics.spin(path)
+                goBack()
 
         else:
-            os.system("print f'∆˚Whoa there bud, that doesnt seem to be a command!˚∆'" + la)
+            if command!= 'exit':
+                os.system("printf '∆˚Whoa there bud, that doesnt seem to be a command!˚∆'" + la)
 
 
 #Just for looks!
