@@ -1,3 +1,10 @@
+##
+# Visual class for creating ascii art work from images.
+# This class handles all user interaction and "frontend" logic.
+# This file was created for the purpose of learning and having fun.
+# created by Aidan Gutierrez March first 2020
+##
+
 import os
 import color_graphics
 import time
@@ -75,9 +82,13 @@ def number():
 #this is important so we dont clog the final product
 def goBack():
     global command
-    os.system("printf 'Commands: To return to menu > back, to exit > exit, for help > help '" + l)
-    while not "back" in command.casefold() and not "exit" in command.casefold() and not "help" in command.casefold():
+    command = ""
+    os.system("printf 'Commands: To return to menu > back, to exit > exit, to convert another image > again  '" + l)
+    while not "back" in command.casefold() and not "exit" in command.casefold() and not "again" in command.casefold():
         command = input(">")
+        if "exit" in command:
+            exit(0)
+
 
 
 def colorPicker():
@@ -100,35 +111,51 @@ def main():
         os.system("printf '•\n"
                   " ★ To Get a picture type pic\n"
                   "•\n"
-                  " ★ To run and animation type ani\n"
+                  " ★ To run a animation type ani\n"
                   "•\n"
-                  " ★ To run and loop type loop\n"
+                  " ★ To run a loop type loop\n"
+                  "•\n"
+                  " ★ To create a spining animation/loop a current picture type spin\n"
                   "•\n"
                   " ★ Finally, To exit type exit\n\n' " + la)
         command = input(">")
 
         if "pic" in command.casefold():
-            root = 'pictures/'
-            chosen = chooseFiles(root)
-            colorPicker()
-            color_graphics.convert(chosen, color)
-            goBack()
+            while "back" not in command:
+                root = 'pictures/'
+                path = chooseFiles(root)
+                colorPicker()
+                color_graphics.convert(path, color)
+                goBack()
+
         elif "ani" in command.casefold():
-            root = 'animations/'
-            path = chooseFiles(root)
-            colorPicker()
-            color_graphics.animation(path, color)
-            goBack()
+            while "back" not in command:
+                root = 'animations/'
+                path = chooseFiles(root)
+                colorPicker()
+                color_graphics.animation(path, color)
+                goBack()
+
         elif "loop" in command.casefold():
-            root = 'loops/'
-            path = chooseFiles(root)
-            os.system("printf 'How many times would you like your loop to run'" + la)
-            times = number()
-            colorPicker()
-            color_graphics.loop(path, times, color)
-            goBack()
+            while "back" not in command:
+                root = 'loops/'
+                path = chooseFiles(root)
+                os.system("printf 'How many times would you like your loop to run'" + la)
+                times = number()
+                colorPicker()
+                color_graphics.loop(path, times, color)
+                goBack()
+
+        elif "spin" in command.casefold():
+            while "back" not in command:
+                root = 'pictures/'
+                path = chooseFiles(root)
+                color_graphics.spin(path)
+                goBack()
+
         else:
-            os.system("print f'∆˚Whoa there bud, that doesnt seem to be a command!˚∆'" + la)
+            if command!= 'exit':
+                os.system("printf '∆˚Whoa there bud, that doesnt seem to be a command!˚∆'" + la)
 
 
 #Just for looks!
