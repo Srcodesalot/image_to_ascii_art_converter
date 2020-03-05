@@ -1,4 +1,4 @@
-# image_to_ascii_art_converter
+# image_to_ascii_art_converter Version 2
 Welcome to Image to ascii art converter or IAAC!
 I built this bad boy just for fun.
 Its a cool way to start working in your terminal a little more cause thats where its meant to run.
@@ -28,10 +28,11 @@ animation/yourAnimation
 loop/yourLoop
 
 # Important notes!
-1. i built this on a mac so im not to sure if there are and breaking diffrences on Windows.
+1. I built this on a mac so im not to sure if there are and breaking differences on Windows.
 2. READ THE NAMING CONVEIONS OR YOUR ANIMATIONS WONT WORK 
 3. This was made to use lolcat so please get it or remove those bits in the code
-4. play ariund with contrast and exposure for better quality ascii images.
+4. Play ariund with contrast and exposure for better quality ascii images.
+6. Version notes are in the pull requests
 5. Have some dang fun!
 
 
