@@ -1,3 +1,10 @@
+##
+# Visual class for creating ascii art work from images.
+# This class handles all user interaction and "frontend" logic.
+# This file was created for the purpose of learning and having fun.
+# created by Aidan Gutierrez March first 2020
+##
+
 import os
 import color_graphics
 import time

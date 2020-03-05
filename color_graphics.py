@@ -1,3 +1,10 @@
+##
+# Logic class for creating ascii art work from images.
+# This file handles the "backend" logic for reading pictures and printing correct values.
+# This file was created for the purpose of learning and having fun.
+# Created by Aidan Gutierrez March first 2020
+##
+
 from PIL import Image
 import os
 import time
@@ -133,5 +140,3 @@ def spin(path):
         sys.stdout.write(f'\r{loading}')
 
     animation(aniPath,False)
-
-# spin("pictures/ghostBusters.jpeg")
