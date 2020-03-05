@@ -121,19 +121,17 @@ def spin(path):
     # rotate picture 30 degrees 12 times to get a full circle
     # x is set to 1 in order to follow naming conventions for animations
     x = 1
-    while x <= 13:
+    while x <= 12:
         #create file name to follow convention
+        #note we use 30 times x because it saves picture quality
         filename = str(x) + '.' + folderName[1]
-        newImg = wreckedImg.rotate(30, resample=Image.BILINEAR, expand=False)
+        newImg = wreckedImg.rotate(30 * x, resample=Image.BILINEAR, expand=False, fillcolor='white')
         newImg.save(aniPath + filename)
         newImg.save(loopPath + filename)
-        wreckedImg = newImg
         loading[x - 1] = '#'
         x += 1
         sys.stdout.write(f'\r{loading}')
 
     animation(aniPath,False)
-
-
 
 # spin("pictures/ghostBusters.jpeg")

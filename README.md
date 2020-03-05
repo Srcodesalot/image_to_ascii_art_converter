@@ -13,7 +13,7 @@ to just jump right in there are only a couple of things youll need to get starte
 NOTE! this project uses the lolcat extention to print cool colors its super easy to just brew install. If you do not want to get the extention then simply change the l and la variables in engine.py to "" instead of " | lolcat". You will also have to take out the lolcat option in the bottom of the computer_graphics.py file.
 
 now that thats out of the way:
-first pull, then spin up a venv for in its directory, pip install the requirments.txt file and you should be good to go!
+first pull, then spin up a venv for in its directory, pip install the requirments.txt file. Then you can add a file (its best if its black and white) to the pictures folder and you should be good to go!
 
 # Animations and loops 
 so not to much to cover here but ill try and be thorough. Animations works just as they do in real life. so the terminal prints out pictures in a sequence to create the illusion of movment. that being said this is what you have to do to make your own:
@@ -31,7 +31,9 @@ loop/yourLoop
 1. i built this on a mac so im not to sure if there are and breaking diffrences on Windows.
 2. READ THE NAMING CONVEIONS OR YOUR ANIMATIONS WONT WORK 
 3. This was made to use lolcat so please get it or remove those bits in the code
-4.Have some dang fun
+4. play ariund with contrast and exposure for better quality ascii images.
+5. Have some dang fun!
+
 
 # Naming Conventions 
 files must be jpg png or Jpeg unless youve made changes to the code.

@@ -79,6 +79,9 @@ def goBack():
     os.system("printf 'Commands: To return to menu > back, to exit > exit, to convert another image > again  '" + l)
     while not "back" in command.casefold() and not "exit" in command.casefold() and not "again" in command.casefold():
         command = input(">")
+        if "exit" in command:
+            exit(0)
+
 
 
 def colorPicker():
