@@ -154,7 +154,7 @@ def main():
                 goBack()
 
         else:
-            if 'exit' in command.casefold():
+            if not 'exit' in command.casefold():
                 os.system("printf '∆˚Whoa there bud, that doesnt seem to be a command!˚∆'" + la)
 
 
